@@ -1,0 +1,171 @@
+:root {
+    color-scheme: light;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172235;
+    background: #f2f5fa;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(circle at 12% 8%, rgba(32, 113, 220, 0.13), transparent 30rem),
+        #f2f5fa;
+}
+
+.page-shell {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 2rem 1rem;
+}
+
+.card {
+    width: min(100%, 34rem);
+    padding: clamp(1.5rem, 5vw, 2.75rem);
+    border: 1px solid #e1e7f0;
+    border-radius: 1.25rem;
+    background: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(23, 34, 53, 0.1);
+}
+
+.login-card {
+    width: min(100%, 29rem);
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem;
+    color: #1769c2;
+    font-size: 0.78rem;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    line-height: 1.15;
+}
+
+.muted {
+    margin: 0.8rem 0 1.8rem;
+    color: #657187;
+    line-height: 1.6;
+}
+
+.form-stack {
+    display: grid;
+    gap: 0.7rem;
+}
+
+label {
+    margin-top: 0.35rem;
+    font-size: 0.92rem;
+    font-weight: 650;
+}
+
+input {
+    width: 100%;
+    min-height: 2.9rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid #cbd4e1;
+    border-radius: 0.65rem;
+    color: inherit;
+    font: inherit;
+}
+
+input:focus {
+    border-color: #1769c2;
+    outline: 3px solid rgba(23, 105, 194, 0.16);
+}
+
+button,
+.button-link {
+    display: inline-flex;
+    min-height: 2.9rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1rem;
+    border: 0;
+    border-radius: 0.65rem;
+    background: #1769c2;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.form-stack button {
+    margin-top: 0.6rem;
+}
+
+button:hover,
+.button-link:hover {
+    background: #1056a2;
+}
+
+.button-secondary {
+    border: 1px solid #ccd5e2;
+    background: #fff;
+    color: #24334a;
+}
+
+.button-secondary:hover {
+    background: #f4f6fa;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 1.2rem;
+    color: #1769c2;
+    font-weight: 650;
+}
+
+.notice {
+    margin: 1.1rem 0;
+    padding: 0.8rem 0.9rem;
+    border-radius: 0.6rem;
+    line-height: 1.45;
+}
+
+.notice-error {
+    background: #fff0ef;
+    color: #a52c24;
+}
+
+.notice-success {
+    background: #eaf8ef;
+    color: #21683b;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.logout-form {
+    margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+    .card {
+        border-radius: 0.9rem;
+    }
+
+    .actions > *,
+    .actions form,
+    .actions button {
+        width: 100%;
+    }
+}

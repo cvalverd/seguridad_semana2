@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saludo protegido | Seguridad</title>
+    <link rel="stylesheet" th:href="@{/assets/style.css}">
+</head>
+<body>
+<main class="page-shell">
+    <section class="card">
+        <p class="eyebrow">Respuesta del backend</p>
+        <h1 th:text="${greeting}">Hello Alumno</h1>
+        <p class="muted">La respuesta se obtuvo usando el token JWT de tu sesión.</p>
+        <div class="actions">
+            <a class="button-link" th:href="@{/home}">Volver al inicio</a>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" class="button-secondary">Cerrar sesión</button>
+            </form>
+        </div>
+    </section>
+</main>
+</body>
+</html>

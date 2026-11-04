@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio | Seguridad</title>
+    <link rel="stylesheet" th:href="@{/assets/style.css}">
+</head>
+<body>
+<main class="page-shell">
+    <section class="card">
+        <p class="eyebrow">Integración frontend + backend</p>
+        <h1>Hola<span th:if="${username}" th:text="|, ${username}|"></span></h1>
+        <p class="muted">Inicia sesión para solicitar un saludo al endpoint protegido del backend.</p>
+
+        <div class="actions" th:if="${username == null}">
+            <a class="button-link" th:href="@{/login}">Iniciar sesión</a>
+        </div>
+
+        <div th:if="${username != null}">
+            <form th:action="@{/greetings}" method="get" class="form-stack">
+                <label for="name">Nombre para el saludo</label>
+                <input id="name" name="name" type="text" maxlength="80" value="Alumno" required>
+                <button type="submit">Consultar saludo protegido</button>
+            </form>
+            <form th:action="@{/logout}" method="post" class="logout-form">
+                <button type="submit" class="button-secondary">Cerrar sesión</button>
+            </form>
+        </div>
+    </section>
+</main>
+</body>
+</html>
